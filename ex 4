@@ -1,0 +1,111 @@
+
+
+package package2;
+import package3.*;
+class pack1 extends pack2{
+   
+    public static void main(String args[])
+     {
+         pack1 obj=new pack1();
+         obj.msg();
+         pack1 obj1=new pack1();
+     System.out.println("DEFAULT METHOD CANNOT BE ACCESSED OUTSIDE THE PACKAGE!!");
+     }
+
+}
+
+
+//SUB PACKAGE:
+
+package package3;
+public class pack2
+{
+    protected void msg()
+    {
+         int a=40;
+         int b=30;
+         System.out.println(a+b);
+         System.out.println("PROTECTED METHODS CAN BE ACCESSED!!");
+    }
+  void msg1()
+    {
+         int a=40;
+         int b=30;
+         System.out.println(a+b);
+    }
+}
+
+
+
+
+
+
+
+
+ package information.books;
+ 
+public class info {
+    String author,bookname,publisher;
+    info(String a,String b,String p)
+    {
+        author=a;
+        bookname=b;
+        publisher=p;
+    }
+
+   
+}
+class bookinfo extends info
+{
+    int accno;
+    bookinfo(String a,String b,String p,int n)
+    {
+        super(a,b,p);
+        accno=n;
+    }
+
+    public void show()
+{
+   System.out.println("Book Details:");
+   System.out.println("name of the book: " +bookname);
+   System.out.println("Author: " + author);
+   System.out.println("Publisher: " + publisher);
+}
+}
+package information.journal;
+
+public class jinfo {
+    String name;
+    int id;
+    jinfo(String s,int i)
+    {
+        name=s;
+        id=i;
+    }
+    
+}
+ class jInfo extends jinfo
+{
+    jInfo(String s,int i)
+    {
+        super(s,i);
+    }
+public void show1()
+{
+   System.out.println("journal Details:");
+   System.out.println("journal name: " +name);
+   System.out.println("journal id: " +id);
+}
+}
+package information;
+
+import information.books.info;
+import information.journal.jinfo;
+
+public class NewClass1 {
+    public static void main(String[] args){
+    var ob1 = new info("Herbert Schildt" "Complete Reference", "ABC Publication");
+    jinfo ob2 = new jinfo("atlas", "234");
+    ob1.show();
+    ob2.show1();  
+    }
